@@ -8,7 +8,7 @@ public class TempCheck : MonoBehaviour
     public GameObject AnswerCheck;
     public GameObject AfterLevel;
     public Camera Camera;
-    public GameObject[] TempValues;
+    public GameObject[] TempLocation;
     //public GameObject[] ValueImage;
     public Light light;
     public GameObject connection;
@@ -45,24 +45,24 @@ public class TempCheck : MonoBehaviour
     
     public void TemperatureCheck()
     {
-        if (TempValues.Length == Temps.Length) 
+        if (TempLocation.Length == Temps.Length) 
         {
             if (!showing)
             {
-                for (int i = 0; i < TempValues.Length; i++)
+                for (int i = 0; i < TempLocation.Length; i++)
                 {
-                    TempValues[i].gameObject.SetActive(true);
+                    TempLocation[i].gameObject.SetActive(true);
                     //alueImage[i].gameObject.SetActive(true);
-                    TextMeshProUGUI texts = TempValues[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+                    TextMeshProUGUI texts = TempLocation[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>();
                     texts.text = Temps[i];
                 }
                 showing = true;
             }
             else
             {
-                for (int i = 0; i < TempValues.Length; i++)
+                for (int i = 0; i < TempLocation.Length; i++)
                 {
-                    TempValues[i].gameObject.SetActive(false);
+                    TempLocation[i].gameObject.SetActive(false);
                     //ValueImage[i].gameObject.SetActive(false);
                 }
                 showing = false;
