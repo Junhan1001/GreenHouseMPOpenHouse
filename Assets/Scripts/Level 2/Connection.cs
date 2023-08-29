@@ -13,7 +13,7 @@ public class Connection : MonoBehaviour
     public bool tutorial;
 
     [Header("References")]
-    public Level2AnswerSheet level2AnswerSheet;
+    public OpenHouseLevel2 level2AnswerSheet;
     public SelectedComponent selectedComponent;
     public ReturnValue valueReturnBtn;
     public ToggleMultiConnect multiConnectToggle;

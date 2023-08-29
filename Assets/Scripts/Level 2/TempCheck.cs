@@ -18,8 +18,7 @@ public class TempCheck : MonoBehaviour
 
     private bool showing;
 
-    [Range(0, 35)]
-    public int[] Temps;
+    public string[] Temps;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +54,7 @@ public class TempCheck : MonoBehaviour
                     TempValues[i].gameObject.SetActive(true);
                     //alueImage[i].gameObject.SetActive(true);
                     TextMeshProUGUI texts = TempValues[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-                    texts.text = Temps[i].ToString() + '\u00B0' + "C";
+                    texts.text = Temps[i];
                 }
                 showing = true;
             }

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class HoverTab : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
+    public OpenHouseLevel2 ANS;
     public HoverGroup hoverGroup;
     public DisplayConnect display;
 
@@ -24,6 +25,7 @@ public class HoverTab : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     void Start()
     {
+        ANS = FindAnyObjectByType<OpenHouseLevel2>();
         display = FindObjectOfType<DisplayConnect>();
         hoverGroup.Subscribe(this);
         imageToChange = transform.GetChild(0);
@@ -39,6 +41,16 @@ public class HoverTab : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         hoverGroup.OnTabSelected(this);
         backgroundImage.color = Color.green;
+        if (componentName == "Hot Pipe")
+        {
+            ANS.HotPipes = true;
+            ANS.CoolPipes = false;
+        }
+        else if (componentName == "Cool Pipe")
+        {
+            ANS.HotPipes = false;
+            ANS.CoolPipes = true;
+        }
         if (display != null)
         {
             //Debug.Log("Display has changed Pipe");
