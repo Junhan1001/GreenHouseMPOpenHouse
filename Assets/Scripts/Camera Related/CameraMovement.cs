@@ -29,16 +29,15 @@ public class CameraMovement : MonoBehaviour
     private float initialDistance;
     public float sensitivity = 5;
     public float maxZoom = 140;
+    public float zoomStopDistance = 60;
     private Material[] skyboxes;
     public bool zooming;
     public bool moved;
 
     private Vector2 startPos;
-    public float zoomStopDistance = 60;
     [SerializeField]
     private float zoomAmount;
     private float deltaDistance;
-    private float tempRotation;
 
     private float maxRotationX = 30f;
     private float minRotationX = 330f;
@@ -63,7 +62,7 @@ public class CameraMovement : MonoBehaviour
         skyboxes = Resources.LoadAll<Material>("Skyboxes");
         rotationSpeed = PlayerPrefs.GetFloat("rotationSpeed");
         sensitivity = PlayerPrefs.GetFloat("zoomSensitivity");
-        originalSpeed = rotationSpeed;
+        //originalSpeed = rotationSpeed;
         zoomAmount = Camera.main.fieldOfView;
 
         if (!isPrelevel)

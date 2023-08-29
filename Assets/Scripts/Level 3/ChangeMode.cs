@@ -21,6 +21,7 @@ namespace Level3
         public Sprite selectComponentSprite;
 
         public GameObject information;
+        public GameObject btnUndo;
 
         public void OnPointerClick(PointerEventData eventData)
         {
@@ -72,6 +73,7 @@ namespace Level3
                 componentWheel.SetActive(true);
                 lineWheel.SetActive(false);
                 information.SetActive(false);
+                btnUndo.SetActive(false);
             }
             else
             {
@@ -84,6 +86,7 @@ namespace Level3
                 componentWheel.SetActive(false);
                 lineWheel.SetActive(true);
                 information.SetActive(true);
+                btnUndo.SetActive(true);
             }
         }
 

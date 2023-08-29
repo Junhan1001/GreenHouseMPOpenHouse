@@ -136,15 +136,18 @@ public class SlidingChapterAnimation : MonoBehaviour
         Color leftColor = left.GetComponent<Image>().color;
         leftColor.a = 0.7f;
         left.GetComponent<Image>().color = leftColor;
+        left.GetComponentInChildren<Button>().interactable = false;
 
         //Right image, sets the new alpha
         Color rightColor = right.GetComponent<Image>().color;
         rightColor.a = 0.7f;
         right.GetComponent<Image>().color = rightColor;
+        right.GetComponentInChildren<Button>().interactable = false;
 
         //whichever object is the index on, priotizes showing that object
         selectedObject = objectList[index];
         selectedObject.SetAsLastSibling();
+        selectedObject.GetComponentInChildren<Button>().interactable = true;
 
         //increases the one which is at the fronts alpha to max
         Color selectedColor = selectedObject.GetComponent<Image>().color;

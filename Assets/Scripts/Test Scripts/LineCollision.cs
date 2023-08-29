@@ -14,8 +14,8 @@ public class LineCollision : MonoBehaviour
 
     [SerializeField]
     private Transform parent;
-    private bool isTriggerring = false;
-    private bool instantiatedLine = false;
+    //private bool isTriggerring = false;
+    //private bool instantiatedLine = false;
 
     private void Start()
     {
@@ -30,7 +30,7 @@ public class LineCollision : MonoBehaviour
             line.transform.rotation = transform.rotation;
             line.name = name;
             line.transform.parent = transform.parent;
-            instantiatedLine = true;
+            //instantiatedLine = true;
             Destroy(gameObject);
         }
     }

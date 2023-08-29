@@ -25,6 +25,7 @@ public class SettingsManager : MonoBehaviour
 
     private int[] fadeSpeedArray = new[] { 1, 5, 51, 255 };
 
+    [SerializeField]
     private Sprite[] skyboxThumbnails;
 
     // Start is called before the first frame update
@@ -37,10 +38,7 @@ public class SettingsManager : MonoBehaviour
         background.value = PlayerPrefs.GetInt("backgroundIndex");
         musicDrop.value = PlayerPrefs.GetInt("musicIndex");
 
-        if (!PlayerPrefs.HasKey("firstTime"))
-        {
-            SetBackground();
-        }
+        SetBackground();
 
         if (!PlayerPrefs.HasKey("fadeValue"))
         {
@@ -69,6 +67,7 @@ public class SettingsManager : MonoBehaviour
 
     public void SetBackground()
     {
+        Debug.Log("set");
         PlayerPrefs.SetInt("backgroundIndex", background.value);
         skyboxThumbail.sprite = skyboxThumbnails[background.value];
 
@@ -110,13 +109,13 @@ public class SettingsManager : MonoBehaviour
         PlayerPrefs.SetFloat("zoomSensitivity", zoomSensitivity.value);
     }
 
-    public void SetFadeSpeed()
-    {
-        fadeSlider.transform.parent.transform.parent.GetChild(fadeSlider.transform.parent.childCount + 1).GetComponent<Fade>().fadeSpeed =
-            (byte)fadeSpeedArray[Mathf.RoundToInt(fadeSlider.value)];
-        PlayerPrefs.SetFloat("fadeValue", fadeSlider.value);
-        PlayerPrefs.SetFloat("fadeSpeed", fadeSpeedArray[Mathf.RoundToInt(fadeSlider.value)]);
-    }
+    //public void SetFadeSpeed()
+    //{
+    //    fadeSlider.transform.parent.transform.parent.GetChild(fadeSlider.transform.parent.childCount + 1).GetComponent<Fade>().fadeSpeed =
+    //        (byte)fadeSpeedArray[Mathf.RoundToInt(fadeSlider.value)];
+    //    PlayerPrefs.SetFloat("fadeValue", fadeSlider.value);
+    //    PlayerPrefs.SetFloat("fadeSpeed", fadeSpeedArray[Mathf.RoundToInt(fadeSlider.value)]);
+    //}
 
     public void ResetValues()
     //resets all the slider values to the default values

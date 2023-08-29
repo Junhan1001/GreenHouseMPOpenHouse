@@ -109,7 +109,7 @@ public class AudioManager : MonoBehaviour
         // If the sound does not exist, return
         if (sound == null) return;
 
-        // If the sound does exist, the sound would be played
+        // If the sound does exist, the sound would be stopped
         sound.source.Stop();
     }
 }
