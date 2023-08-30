@@ -53,6 +53,7 @@ public class AudioManager : MonoBehaviour
     {
         Play(PlayerPrefs.GetString("musicName") + " (Music)");
         audioSources = GetComponents<AudioSource>();
+        Debug.Log(PlayerPrefs.GetString("musicName") + " (Music)");
     }
 
     public void UpdateVolume() 
