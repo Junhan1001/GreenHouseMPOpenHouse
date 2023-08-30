@@ -533,7 +533,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 127363455}
         m_TargetAssemblyTypeName: FloorSelection, Assembly-CSharp
-        m_MethodName: GoToLevelSelect
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3388,9 +3388,9 @@ MonoBehaviour:
   scrollCeiling: 0
   sensitivity: 5
   maxZoom: 140
+  zoomStopDistance: 60
   zooming: 0
   moved: 0
-  zoomStopDistance: 60
   zoomAmount: 0
   cameraDist: 0
 --- !u!4 &2068408862

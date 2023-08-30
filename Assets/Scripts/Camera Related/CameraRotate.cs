@@ -45,7 +45,6 @@ public class CameraRotate : MonoBehaviour
             Debug.Log("NOT First Time Opening");
             if (FloorSelection.FromPreviewLevel)
             {
-                DirectlyShowLevelSelect();
                 FloorSelection.FromPreviewLevel = false;
             }
         }
