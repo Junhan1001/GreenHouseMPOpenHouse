@@ -77,9 +77,11 @@ public class Level1Reward : MonoBehaviour
             inspectCamera.gameObject.SetActive(true);
             backgroundPanel.SetActive(true);
 
+
             if (hit.transform.tag.StartsWith("Component") && !LoadedObject) 
             {
                 tagArray = hit.transform.tag.Split("/");
+                Debug.Log("Prefabs/Components/" + tagArray[1] + "_Inspect");
                 LoadedObject = Resources.Load<GameObject>("Prefabs/Components/" + tagArray[1] + "_Inspect");
             }
             if (LoadedObject && instantiatePoint.transform.childCount < 1)
@@ -101,7 +103,6 @@ public class Level1Reward : MonoBehaviour
 
                 ComponentLinesAppend(tagArray[1], "End" + tagArray[1]);
                 cross.SetActive(true);
-                LoadedObject = null;
             }
         }
 
@@ -164,6 +165,7 @@ public class Level1Reward : MonoBehaviour
 
     public void RemoveInspect() 
     {
+        LoadedObject = null;
         Destroy(inspectPrefab);
         panel.SetActive(false);
         cross.SetActive(false);

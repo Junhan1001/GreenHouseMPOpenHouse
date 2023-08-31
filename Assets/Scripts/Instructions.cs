@@ -8,6 +8,8 @@ public class Instructions : MonoBehaviour
 {
     public VideoPlayer video;
 
+    public GameObject cameraHint;
+
     public List<VideoClip> clips = new List<VideoClip>();
     public List<string> tutorialText = new List<string>();
     public List<string> tutorialTitle = new List<string>();
@@ -27,6 +29,11 @@ public class Instructions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (cameraHint) 
+        {
+            cameraHint.SetActive(false);
+        }
+
         index = 0;
         continueBtn.SetActive(false);
         video.clip = clips[index];
@@ -115,5 +122,10 @@ public class Instructions : MonoBehaviour
                 continueBtn.SetActive(false);
             }
         }
+    }
+
+    public void ShowCamHint() 
+    {
+        cameraHint.SetActive(true);
     }
 }

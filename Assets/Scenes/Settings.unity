@@ -162,6 +162,7 @@ MonoBehaviour:
   sound: {fileID: 1074405293}
   defaultBackground: 4
   skyboxThumbail: {fileID: 772500852}
+  skyboxThumbnails: []
 --- !u!4 &20019657
 Transform:
   m_ObjectHideFlags: 0
@@ -2552,7 +2553,6 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 0}
   levelSelectPanel: {fileID: 0}
   characterSelect: {fileID: 0}
-  skyboxes: []
 --- !u!1 &437312596
 GameObject:
   m_ObjectHideFlags: 0
@@ -13565,7 +13565,7 @@ RectTransform:
   m_GameObject: {fileID: 2080748170}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.231542, y: 1.4635408, z: 1.4284979}
+  m_LocalScale: {x: 1.1227767, y: 1.3342862, z: 1.3023381}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1748710592}
@@ -13583,7 +13583,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 242.51, y: -7.3126}
+  m_AnchoredPosition: {x: 284, y: -7.3126}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2105081673
