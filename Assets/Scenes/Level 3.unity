@@ -6191,7 +6191,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 30, y: 74}
+  m_AnchoredPosition: {x: 305, y: 20}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &863865434
@@ -7550,6 +7550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 861739998}
+  cameraHint: {fileID: 0}
   clips:
   - {fileID: 32900000, guid: 80c8bdefea60b3a42876ea2cf4153afb, type: 3}
   - {fileID: 32900000, guid: eea55d51e8f3a3b42bb99fd2af6bd341, type: 3}
@@ -13876,6 +13877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  cameraHint: {fileID: 0}
   clips:
   - {fileID: 32900000, guid: 286e7877469a8e64b8bda4a7758d5371, type: 3}
   - {fileID: 32900000, guid: 3fc1f1e22655b664e8f69cdc2c370d37, type: 3}
