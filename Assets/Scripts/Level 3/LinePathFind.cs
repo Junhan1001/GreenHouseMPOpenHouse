@@ -51,8 +51,6 @@ public class LinePathFind : MonoBehaviour
     [SerializeField]
     private GameObject imgError;
 
-    private bool fullConnectionPoints = false;
-
     private float startTime;
 
     public bool typeOfLineSelected = false;
@@ -211,12 +209,10 @@ public class LinePathFind : MonoBehaviour
                     //    previousDrawnLineFromAndTo.RemoveAt(previousDrawnLineFromAndTo.Count - 1);
                     //}
                     StartCoroutine(ShowError());
-                    if (!fullConnectionPoints)
-                    {
+                    if (changedFrom)
                         changedFrom.GetComponent<LineLimit>().AllowDrawLine = true;
+                    if (changedTo)
                         changedTo.GetComponent<LineLimit>().AllowDrawLine = true;
-                    }
-                    fullConnectionPoints = false;
                     changedFrom = null;
                     changedTo = null;
                     fromT = null;
@@ -239,7 +235,9 @@ public class LinePathFind : MonoBehaviour
     private IEnumerator ShowError()
     {
         imgError.SetActive(true);
-        yield return StartCoroutine(CloseErrorImg());
+        imgError.GetComponent<PopUp>().timer = 2f;
+        yield break;
+        //yield return StartCoroutine(CloseErrorImg());
     }
 
     private IEnumerator CloseErrorImg()
@@ -452,8 +450,6 @@ public class LinePathFind : MonoBehaviour
             lineTo = toPoint;
             previousDrawnLineFromAndTo.Add(new() { fromPoint.GetComponent<LineLimit>(), toPoint.GetComponent<LineLimit>() });
         }
-        else
-            fullConnectionPoints = true;
         return new List<Transform>() { fromPoint, toPoint };
     }
 
