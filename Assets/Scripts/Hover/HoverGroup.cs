@@ -56,7 +56,7 @@ public class HoverGroup : MonoBehaviour, IPointerClickHandler, IDragHandler
         if(cameraController)
             cameraController.allowZoom = false;
 
-        ResetTabColor(components);
+        ResetTabColor(components,Color.white);
         components.imageToChange.transform.localScale = components.originTransform;
         components.imageToChange.transform.localScale = Vector3.Lerp(components.imageToChange.transform.localScale, components.imageToChange.transform.localScale * 0.8f, 1);
 
@@ -128,13 +128,13 @@ public class HoverGroup : MonoBehaviour, IPointerClickHandler, IDragHandler
         connection.body = components.pipeBody;
     }
 
-    public void ResetTabColor(HoverTab component) 
+    public void ResetTabColor(HoverTab component, Color color) 
     {
         foreach (HoverTab hovertab in componentTabs) 
         {
             if (hovertab != component)
             {
-                hovertab.backgroundImage.color = Color.white;
+                hovertab.backgroundImage.color = color;
             }
         }
     }
