@@ -22,4 +22,9 @@ public class TheoryTab : MonoBehaviour, IPointerClickHandler
         tabImage = GetComponent<Image>();
         tabGroup.Subscribe(this);
     }
+
+    public void GoToAnswers()
+    {
+        tabGroup.OnTabSelected(this);
+    }
 }

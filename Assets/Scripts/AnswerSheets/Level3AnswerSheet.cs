@@ -15,6 +15,7 @@ public class Level3AnswerSheet : MonoBehaviour, IPointerClickHandler
     public GameObject barSelectedComponents;
     public Button btnUndo;
     public GameObject btnProceed;
+    public GameObject AnswerBtn;
 
     private int numberOfCorrectConnections = 6;
 
@@ -83,6 +84,7 @@ public class Level3AnswerSheet : MonoBehaviour, IPointerClickHandler
             correctPanel.SetActive(true);
             gameObject.SetActive(false);
             btnProceed.SetActive(true);
+            AnswerBtn.SetActive(false);
             if (!PlayerPrefs.HasKey(Strings.ChapterTwoLevelThreeCompleted))
             {
                 if (PlayerPrefs.HasKey(Strings.ChapterTwoProgressions))
@@ -105,6 +107,7 @@ public class Level3AnswerSheet : MonoBehaviour, IPointerClickHandler
         else
         {
             wrongPanel.SetActive(true);
+            AnswerBtn.SetActive(true);
             StartCoroutine(ResetLineColor(correctPanel.GetComponent<PopUp>().timer * 7, correctLines));
             StartCoroutine(ResetLineColor(wrongPanel.GetComponent<PopUp>().timer * 3, wrongLines));
             Debug.Log("You are so stupid!!! Wrong!!!!!!!!");

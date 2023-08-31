@@ -8,6 +8,7 @@ public class Level1AnswerSheet1 : MonoBehaviour
     public List<GameObject> correctSelection1;
     public List<GameObject> correctSelection2;
     public List<GameObject> incorrectSelection;
+    public GameObject AnswerBtn;
     public GameObject correctPanel;
     public GameObject wrongPanel;
 
@@ -31,6 +32,7 @@ public class Level1AnswerSheet1 : MonoBehaviour
             correctPanel.SetActive(true);
             inspectComponentScript.enabled = true;
             placement1.enabled = false;
+            AnswerBtn.SetActive(false);
             if (!PlayerPrefs.HasKey(Strings.ChapterTwoLevelOneCompleted))
             {
                 if (PlayerPrefs.HasKey(Strings.ChapterTwoProgressions))
@@ -49,6 +51,7 @@ public class Level1AnswerSheet1 : MonoBehaviour
         else
         {
             wrongPanel.SetActive(true);
+            AnswerBtn.SetActive(true);
         }
     }
 

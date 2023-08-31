@@ -19,8 +19,8 @@ public class OpenHouseLevel2 : MonoBehaviour
     public bool connectionHot;
     public bool connectionCool;
 
-    
 
+    public GameObject HintsBtn;
     public GameObject correctPanel;
     public GameObject wrongPanel;
     public static bool showPopUp;
@@ -67,6 +67,7 @@ public class OpenHouseLevel2 : MonoBehaviour
                 fade.ShowChapterTwoBadge();
                 Debug.Log("Correct");
                 showPopUp = false;
+                HintsBtn.SetActive(false);
             }
             else
             {
@@ -75,6 +76,7 @@ public class OpenHouseLevel2 : MonoBehaviour
                 showPopUp = true;
                 connectionsChecked = false;
                 HotAns = CoolAns = null;
+                HintsBtn.SetActive(true);
             }
         }
     }
