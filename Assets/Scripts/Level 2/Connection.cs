@@ -218,6 +218,11 @@ public class Connection : MonoBehaviour
                         cameraMovement.allowRotation = true;
                         cameraMovement.zooming = false;
                         Camera.main.fieldOfView = 25;
+
+                        if (points.Count == 0) 
+                        {
+                            display.ResetDisplayConnect();
+                        }
                     }
                 }
             }
@@ -230,6 +235,10 @@ public class Connection : MonoBehaviour
                     cameraMovement.allowRotation = true;
                     cameraMovement.zooming = false;
                     Camera.main.fieldOfView = 25;
+                    if (points.Count == 0)
+                    {
+                        display.ResetDisplayConnect();
+                    }
                     selectedComponent = null;
                 }
             }
@@ -353,6 +362,13 @@ public class Connection : MonoBehaviour
                         {
                             tobeunhighlighted.Remove(pipe);
                             outsame = insame = 0;
+
+                            foreach (GameObject connectionPoint in points) 
+                            {
+                                connectionPoint.GetComponent<MeshRenderer>().sharedMaterial = originalMat;
+                            }
+                            points.Clear();
+                            display.ResetDisplayConnect();
                             ErrorInandIn.SetActive(true);
                             return;
                         }

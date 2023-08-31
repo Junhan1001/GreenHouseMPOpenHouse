@@ -27,13 +27,15 @@ public class ReturnValue : MonoBehaviour
         {
             btn.onClick.AddListener(delegate { ReturnConnectionPoint(); });
         }
-        selectedComponentBtn = connection.selectedComponent;
         
+        selectedComponentBtn = connection.selectedComponent;
+
         foreach (GameObject t in selectedComponentBtn.selectedTransform)
         {
             var mesh = t.GetComponent<MeshRenderer>().sharedMaterial;
             var connectionIndex = selectedComponentBtn.selectedTransform.IndexOf(t);
             int index = selectedComponentBtn.IndexReturning(t);
+
             if (connection.tobeunhighlighted.Count >= 1)
             {
                 //Debug.Log(connection.tobeunhighlighted.Contains(t));
@@ -61,6 +63,7 @@ public class ReturnValue : MonoBehaviour
                 }
             }
         }
+
     }
 
     public void ReturnConnectionPoint()

@@ -1382,7 +1382,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774221237}
-  m_LocalRotation: {x: -0, y: 0.29563868, z: -0, w: 0.95529985}
+  m_LocalRotation: {x: -0, y: 0.29563865, z: -0, w: 0.95529985}
   m_LocalPosition: {x: 298, y: 209, z: -45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3383,7 +3383,7 @@ MonoBehaviour:
   cameraLockBtn: {fileID: 0}
   allowRotation: 1
   allowZoom: 1
-  rotationSpeed: 0
+  rotationSpeed: 10
   scrollFloor: 0
   scrollCeiling: 0
   sensitivity: 5

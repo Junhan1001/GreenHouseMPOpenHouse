@@ -62,8 +62,9 @@ public class CameraMovement : MonoBehaviour
         skyboxes = Resources.LoadAll<Material>("Skyboxes");
         rotationSpeed = PlayerPrefs.GetFloat("rotationSpeed");
         sensitivity = PlayerPrefs.GetFloat("zoomSensitivity");
-        //originalSpeed = rotationSpeed;
+        originalSpeed = rotationSpeed;
         zoomAmount = Camera.main.fieldOfView;
+
 
         if (!isPrelevel)
         {
@@ -91,7 +92,7 @@ public class CameraMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    { 
+    {
         CheckSkybox();
         if (isPrelevel)
         {
@@ -223,7 +224,7 @@ public class CameraMovement : MonoBehaviour
                 if (isPrelevel)
                 {
                     if (rotationAmountX != 0)
-                    {
+                    { 
                         if ((currentEulerAngleX + rotationAmountX) > maxRotationX + 30f && (currentEulerAngleX + rotationAmountX) < 180)
                         {
                             rotationAmountX = 0;
@@ -239,36 +240,40 @@ public class CameraMovement : MonoBehaviour
                     transform.RotateAround(cameras[0].position, transform.right, rotationAmountX);
                     return;
                 }
-                if (rotationAmountY != 0)
+                else 
                 {
-                    if ((currentEulerAngleY + rotationAmountY) > maxRotationY)
+                    if (rotationAmountY != 0)
                     {
-                        //rotationAmountY = maxRotationY - currentEulerAngleY;
-                        rotationAmountY = 0;
+                        if ((currentEulerAngleY + rotationAmountY) > maxRotationY)
+                        {
+                            //rotationAmountY = maxRotationY - currentEulerAngleY;
+                            rotationAmountY = 0;
+                        }
+                        else if (currentEulerAngleY + rotationAmountY < minRotationY)
+                        {
+                            //rotationAmountY = minRotationY - currentEulerAngleY;
+                            rotationAmountY = 0;
+                        }
+                        transform.RotateAround(cameras[0].position, transform.up, rotationAmountY);
+                        //transform.Rotate(Vector3.up, rotationAmountY);
                     }
-                    else if (currentEulerAngleY + rotationAmountY < minRotationY)
+                    if (rotationAmountX != 0)
                     {
-                        //rotationAmountY = minRotationY - currentEulerAngleY;
-                        rotationAmountY = 0;
+                        //Debug.Log(currentEulerAngleX + rotationAmountX);
+                        if ((currentEulerAngleX + rotationAmountX) > maxRotationX && (currentEulerAngleX + rotationAmountX) < 180)
+                        {
+                            rotationAmountX = 0;
+                            //rotationAmountX = maxRotationX - currentEulerAngleX;
+                        }
+                        else if ((currentEulerAngleX + rotationAmountX < minRotationX) && (currentEulerAngleX + rotationAmountX > 180))
+                        {
+                            rotationAmountX = 0;
+                            //rotationAmountX = maxRotationX - currentEulerAngleX;
+                        }
+                        //transform.Rotate(Vector3.right, rotationAmountX);
+                        transform.RotateAround(cameras[0].position, transform.right, rotationAmountX);
+
                     }
-                    transform.RotateAround(cameras[0].position, transform.up, rotationAmountY);
-                    //transform.Rotate(Vector3.up, rotationAmountY);
-                }
-                if (rotationAmountX != 0)
-                {
-                    //Debug.Log(currentEulerAngleX + rotationAmountX);
-                    if ((currentEulerAngleX + rotationAmountX) > maxRotationX && (currentEulerAngleX + rotationAmountX) < 180)
-                    {
-                        rotationAmountX = 0;
-                        //rotationAmountX = maxRotationX - currentEulerAngleX;
-                    }
-                    else if ((currentEulerAngleX + rotationAmountX < minRotationX) && (currentEulerAngleX + rotationAmountX > 180))
-                    {
-                        rotationAmountX = 0;
-                        //rotationAmountX = maxRotationX - currentEulerAngleX;
-                    }
-                    //transform.Rotate(Vector3.right, rotationAmountX);
-                    transform.RotateAround(cameras[0].position, transform.right, rotationAmountX);
                 }
                 transform.RotateAround(cameras[0].position, transform.up, rotationAmountY);
                 transform.RotateAround(cameras[0].position, transform.right, rotationAmountX);

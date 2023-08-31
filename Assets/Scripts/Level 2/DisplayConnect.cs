@@ -27,14 +27,15 @@ public class DisplayConnect : MonoBehaviour
         PipeSelected.sprite = transparentSprite;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (connection.points.Count == 0 && !connection.selectedComponent)
-        {
-            Reset();
-        }
-    }
+    //// Update is called once per frame
+    //void Update()
+    //{
+    //    //Debug.Log(connection.selectedComponent + "," + connection.points.Count);
+    //    if (connection.points.Count == 0 && !connection.selectedComponent)
+    //    {
+    //        Reset();
+    //    }
+    //}
 
     public void FromSelected(Image component)
     {
@@ -51,7 +52,7 @@ public class DisplayConnect : MonoBehaviour
         PipeSelected.sprite = pipe.sprite;
     }
 
-    public void Reset()
+    public void ResetDisplayConnect()
     {
         //PipeSelected.sprite = transparentSprite;
         ImgFrom.sprite = transparentSprite;
