@@ -200,6 +200,7 @@ public class CameraMovement : MonoBehaviour
             
             if (connection)
                 Camera.main.fieldOfView = 40;
+
             if (Physics.Raycast(cameras[0].position, transform.position - cameras[0].position, out RaycastHit hit, cameraDist, ~(1 << 6)))
             {
                 Vector3 newCamPos = hit.point;
