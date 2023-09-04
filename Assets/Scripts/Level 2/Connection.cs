@@ -252,22 +252,28 @@ public class Connection : MonoBehaviour
                 {
                     selectedComponent.IndexReturn().GetComponent<MeshRenderer>().sharedMaterial = originalMat;
                     points.Remove(selectedComponent.IndexReturn().gameObject);
-                    if (!(tobeunhighlighted.Count % 2 == 0))
+                    if (tobeunhighlighted[tobeunhighlighted.Count-1] == selectedComponent.IndexReturn() && (AHUPoint1.Contains(selectedComponent.IndexReturn()) || AHUPoint2.Contains(selectedComponent.IndexReturn()) ))
                     {
-                        foreach (GameObject point in AHUPoint1)
+                        if (AHUPoint1.Contains(selectedComponent.IndexReturn()))
                         {
-                            if (tobeunhighlighted.Contains(point))
+                            foreach (GameObject point in AHUPoint1)
                             {
-                                point.GetComponent<MeshRenderer>().sharedMaterial = originalMat;
-                                tobeunhighlighted.Remove(point);
+                                if (tobeunhighlighted.Contains(point))
+                                {
+                                    point.GetComponent<MeshRenderer>().sharedMaterial = originalMat;
+                                    tobeunhighlighted.Remove(point);
+                                }
                             }
                         }
-                        foreach(GameObject point in AHUPoint2)
+                        if (AHUPoint2.Contains(selectedComponent.IndexReturn()))
                         {
-                            if (tobeunhighlighted.Contains(point))
+                            foreach (GameObject point in AHUPoint2)
                             {
-                                point.GetComponent<MeshRenderer>().sharedMaterial = originalMat;
-                                tobeunhighlighted.Remove(point);
+                                if (tobeunhighlighted.Contains(point))
+                                {
+                                    point.GetComponent<MeshRenderer>().sharedMaterial = originalMat;
+                                    tobeunhighlighted.Remove(point);
+                                }
                             }
                         }
                     }
