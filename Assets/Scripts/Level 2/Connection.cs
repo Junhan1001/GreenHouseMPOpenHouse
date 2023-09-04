@@ -253,7 +253,7 @@ public class Connection : MonoBehaviour
                     selectedComponent.IndexReturn().GetComponent<MeshRenderer>().sharedMaterial = originalMat;
                     points.Remove(selectedComponent.IndexReturn().gameObject);
                     if (tobeunhighlighted[tobeunhighlighted.Count-1] == selectedComponent.IndexReturn() && (AHUPoint1.Contains(selectedComponent.IndexReturn()) || AHUPoint2.Contains(selectedComponent.IndexReturn()) ))
-                    {
+
                         if (AHUPoint1.Contains(selectedComponent.IndexReturn()))
                         {
                             foreach (GameObject point in AHUPoint1)
@@ -277,7 +277,6 @@ public class Connection : MonoBehaviour
                             }
                         }
                     }
-                    else
                     {
                         tobeunhighlighted.RemoveAt(tobeunhighlighted.Count - 1);
                     }
@@ -349,9 +348,9 @@ public class Connection : MonoBehaviour
 
                 if (points.Count >= 2)
                 {
-
                     CheckConnectType();
                 }
+
                 if (points.Count >= 2)
                 {
                     var pointlist = new List<GameObject>();
@@ -528,11 +527,7 @@ public class Connection : MonoBehaviour
 
     public void UndoPipe()
     {
-        //if (points.Count == 1)
-        //{
-        //    if (points[0])
-        //    points.Clear();
-        //}
+
         if (tobeunhighlighted.Count > 1)
         {
             if (tobeunhighlighted.Count % 2 == 0)
@@ -647,9 +642,6 @@ public class Connection : MonoBehaviour
         }
         Debug.Log("Removed the lastest pipe");
 
-
-
-
         //if (tobeunhighlighted.Count > 0)
         //{
         //    if (tobeunhighlighted[tobeunhighlighted.Count - 1].transform.GetComponent<MeshRenderer>().sharedMaterial == selectionMat)
@@ -679,8 +671,6 @@ public class Connection : MonoBehaviour
         //    Debug.Log("No Pipes Left");
         //    return;
         //}
-
-
     }
 
 
