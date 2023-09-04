@@ -399,9 +399,8 @@ public class Connection : MonoBehaviour
             }
             valueReturnBtn.pressedBtn = false;
         }
-    }
-
-    void Connect()
+    
+     void Connect()
     {
         if (!pipe && !entrance && !exit && !body)
         {
