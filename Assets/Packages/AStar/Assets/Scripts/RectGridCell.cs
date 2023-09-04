@@ -23,7 +23,7 @@ public class RectGridCell : MonoBehaviour
 
     public void SetInnerColor(Color col)
     {
-        Color newColor = new Color(col.r, col.g, col.b, 0.5f);
+        Color newColor = new Color(col.r, col.g, col.b, 0.0f);
         innerSprite.color = newColor;
     }
 
