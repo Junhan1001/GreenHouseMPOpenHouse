@@ -135,7 +135,7 @@ public class Connection : MonoBehaviour
         {
             pipeWarning = true;
         }
-        else 
+        else
         {
             pipeWarning = false;
         }
@@ -196,11 +196,11 @@ public class Connection : MonoBehaviour
                     //selectedComponent.valueReturn.selectedComponentBtn = selectedComponent;
                     //valueReturnBtn.selectedComponentBtn = selectedComponent;
 
-                    foreach (SelectedComponent component in componentArray) 
+                    foreach (SelectedComponent component in componentArray)
                     {
                         if (selectedComponent != component)
-                        { 
-                            component.RemoveUI();   
+                        {
+                            component.RemoveUI();
                         }
                         else //if (selectedComponent == component) //if smth selected & same item, look at
                         {
@@ -209,7 +209,7 @@ public class Connection : MonoBehaviour
                         }
                     }
                 }
-                else 
+                else
                 {
                     if (selectedComponent)
                     {
@@ -219,7 +219,7 @@ public class Connection : MonoBehaviour
                         cameraMovement.zooming = false;
                         Camera.main.fieldOfView = 25;
 
-                        if (points.Count == 0) 
+                        if (points.Count == 0)
                         {
                             display.ResetDisplayConnect();
                         }
@@ -228,7 +228,7 @@ public class Connection : MonoBehaviour
             }
             else
             {
-                if (selectedComponent) 
+                if (selectedComponent)
                 {
                     selectedComponent.RemoveUI();
                     cameraMovement.transform.rotation = Quaternion.Euler(11, 90, 0);
@@ -252,7 +252,7 @@ public class Connection : MonoBehaviour
                 {
                     selectedComponent.IndexReturn().GetComponent<MeshRenderer>().sharedMaterial = originalMat;
                     points.Remove(selectedComponent.IndexReturn().gameObject);
-                    if (tobeunhighlighted[tobeunhighlighted.Count-1] == selectedComponent.IndexReturn() && (AHUPoint1.Contains(selectedComponent.IndexReturn()) || AHUPoint2.Contains(selectedComponent.IndexReturn()) ))
+                    if (tobeunhighlighted[tobeunhighlighted.Count - 1] == selectedComponent.IndexReturn() && (AHUPoint1.Contains(selectedComponent.IndexReturn()) || AHUPoint2.Contains(selectedComponent.IndexReturn())))
 
                         if (AHUPoint1.Contains(selectedComponent.IndexReturn()))
                         {
@@ -265,18 +265,18 @@ public class Connection : MonoBehaviour
                                 }
                             }
                         }
-                        if (AHUPoint2.Contains(selectedComponent.IndexReturn()))
+                    if (AHUPoint2.Contains(selectedComponent.IndexReturn()))
+                    {
+                        foreach (GameObject point in AHUPoint2)
                         {
-                            foreach (GameObject point in AHUPoint2)
+                            if (tobeunhighlighted.Contains(point))
                             {
-                                if (tobeunhighlighted.Contains(point))
-                                {
-                                    point.GetComponent<MeshRenderer>().sharedMaterial = originalMat;
-                                    tobeunhighlighted.Remove(point);
-                                }
+                                point.GetComponent<MeshRenderer>().sharedMaterial = originalMat;
+                                tobeunhighlighted.Remove(point);
                             }
                         }
                     }
+
                     {
                         tobeunhighlighted.RemoveAt(tobeunhighlighted.Count - 1);
                     }
@@ -292,7 +292,7 @@ public class Connection : MonoBehaviour
                 //if no points contains the index return and the index return not null
                 if (points.Contains(selectedComponent.IndexReturn().gameObject))
                 {
-                    
+
                     var last = points.Count;
 
                     if (AHUPoint1.Contains(points[last - 1]))
@@ -316,7 +316,7 @@ public class Connection : MonoBehaviour
                 {
                     points.Add(selectedComponent.IndexReturn().gameObject);
                     var last = points.Count;
-                    
+
                     if (AHUPoint1.Contains(points[last - 1]))
                     {
                         foreach (GameObject point in AHUPoint1)
@@ -389,7 +389,7 @@ public class Connection : MonoBehaviour
                     if (points.Count >= 2)
                     {
                         Connect();
-                    } 
+                    }
                     //Connect();
                     //if (FindObjectOfType<Tutorial>() != null)
                     //{
@@ -399,8 +399,9 @@ public class Connection : MonoBehaviour
             }
             valueReturnBtn.pressedBtn = false;
         }
+    }
     
-     void Connect()
+    void Connect()
     {
         if (!pipe && !entrance && !exit && !body)
         {
