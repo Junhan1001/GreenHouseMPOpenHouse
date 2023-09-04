@@ -45,6 +45,7 @@ public class ReturnValue : MonoBehaviour
             }
             else
             {
+                gameObject.transform.GetChild(connectionIndex).GetComponent<Image>().color = whiter;
                 gameObject.transform.GetChild(connectionIndex).GetComponent<Button>().interactable = true;
             }
 
