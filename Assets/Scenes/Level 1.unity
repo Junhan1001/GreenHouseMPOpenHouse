@@ -11279,7 +11279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5532ce0e1463c824591030d1e39c6614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fade: {fileID: 0}
+  fade: {fileID: 1005503253}
   correctSelection1:
   - {fileID: 574684713}
   - {fileID: 898011133}
@@ -11946,7 +11946,7 @@ MonoBehaviour:
   timer: 0
   popSpeed: {x: 0.02, y: 0.02, z: 0.02}
   popImage: {fileID: 1741942268}
-  fade: {fileID: 0}
+  fade: {fileID: 1005503253}
   pop: 1
   wrong: 0
   popAtBeginning: 0
