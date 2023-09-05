@@ -104,8 +104,8 @@ public static class Strings
 
     public static void ShowBadges(string chapter, int chapterProgressions, string badgePath, Image badge)
     {
-        if (PlayerPrefs.HasKey(ChaptersDictionary[chapter][0]))
-        {
+        //if (PlayerPrefs.HasKey(ChaptersDictionary[chapter][0]))
+        //{
             if (chapterProgressions != 3)
             {
                 badge.color = new Color32(0, 0, 0, 100);
@@ -118,10 +118,10 @@ public static class Strings
             //Texture2D texture2D = new(1, 1);
             //texture2D.LoadImage(Convert.FromBase64String(PlayerPrefs.GetString(ChaptersDictionary[chapter][1])));
             //badge.sprite = Sprite.Create(texture2D, new Rect(0, 0, texture2D.width, texture2D.height), new Vector2(0, 0));
-        }
-        else
-        {
-            badge.color = new Color32(0, 0, 0, 100);
-        }
+        //}
+        //else
+        //{
+        //    badge.color = new Color32(0, 0, 0, 100);
+        //}
     }
 }

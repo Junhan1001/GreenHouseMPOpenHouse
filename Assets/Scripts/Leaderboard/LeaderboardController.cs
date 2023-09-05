@@ -82,7 +82,7 @@ public class LeaderboardController : MonoBehaviour
 
             Image badge1 = playerEntry.transform.GetChild(0).Find("Body").Find("Badges").GetComponentsInChildren<Image>()[0];
             Image badge2 = playerEntry.transform.GetChild(0).Find("Body").Find("Badges").GetComponentsInChildren<Image>()[1];
-            Image badge3 = playerEntry.transform.GetChild(0).Find("Body").Find("Badges").GetComponentsInChildren<Image>()[2];
+            Image badge3 = playerEntry.transform.GetChild(0).Find("Body").Find("Badges").Find("Chapter3Badge").GetComponentsInChildren<Image>()[0];
 
             switch (playerData.gender)
             {
