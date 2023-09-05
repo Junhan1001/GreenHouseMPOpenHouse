@@ -62,18 +62,18 @@ public class ErrorCatch : MonoBehaviour
         Destroy(error);
     }
 
-    private void OnApplicationPause(bool pause)
-    {
-        if (!pause)
-        {
-            quitGame = true;
-        }
+    //private void OnApplicationPause(bool pause)
+    //{
+    //    if (!pause)
+    //    {
+    //        quitGame = true;
+    //    }
 
-        if (pause && quitGame)
-        {
-            SceneManager.LoadScene("PreloadScene");
-        }
-    }
+    //    if (pause && quitGame)
+    //    {
+    //        SceneManager.LoadScene("PreloadScene");
+    //    }
+    //}
 
     //private void OnApplicationFocus(bool focus)
     //{

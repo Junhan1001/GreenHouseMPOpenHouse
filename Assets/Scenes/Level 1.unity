@@ -6945,6 +6945,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2277970009710657515, guid: 3f4ea712a0ad18242bf05298daff308d, type: 3}
+      propertyPath: badge
+      value: 
+      objectReference: {fileID: 1656297788}
+    - target: {fileID: 2277970009710657515, guid: 3f4ea712a0ad18242bf05298daff308d, type: 3}
       propertyPath: pauseAnim
       value: 
       objectReference: {fileID: 1817454500}
@@ -10887,6 +10891,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2471059536657071591, guid: 8429b6caea4b8c0488cde212107a3c5d, type: 3}
   m_PrefabInstance: {fileID: 1656297786}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1656297788 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2471059536657071590, guid: 8429b6caea4b8c0488cde212107a3c5d, type: 3}
+  m_PrefabInstance: {fileID: 1656297786}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1666441282
 GameObject:
   m_ObjectHideFlags: 0
@@ -11264,6 +11279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5532ce0e1463c824591030d1e39c6614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fade: {fileID: 0}
   correctSelection1:
   - {fileID: 574684713}
   - {fileID: 898011133}

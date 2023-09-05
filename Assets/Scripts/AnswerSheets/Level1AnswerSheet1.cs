@@ -5,6 +5,8 @@ using System.Linq;
 
 public class Level1AnswerSheet1 : MonoBehaviour
 {
+    public Fade fade;
+
     public List<GameObject> correctSelection1;
     public List<GameObject> correctSelection2;
     public List<GameObject> incorrectSelection;
@@ -47,6 +49,7 @@ public class Level1AnswerSheet1 : MonoBehaviour
                 }
                 PlayerPrefs.SetInt(Strings.ChapterTwoLevelOneCompleted, 1);
             }
+            fade.ShowChapterTwoBadge();
         }
         else
         {
