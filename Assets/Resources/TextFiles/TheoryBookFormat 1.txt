@@ -5,8 +5,8 @@
 EndComponents
 
 Pipes
-[L] | ComponentName:Chilled Water pipe – Supply  (CHWP-S) | ComponentDescription:Supplies chilled water to affect exchange of heat between water and air to condition spaces. & [R] | ComponentName:Chilled Water pipe – Return (CHWP-R) | ComponentDescription:Returns heat transferred from building spaces to the refrigeration cycle enabled by a pump.
-[L] | ComponentName:Condenser water pipe – Supply (CWP-S) | ComponentDescription:Supplies water carrying the heat-rejected from the refrigeration cycle to the heat-rejection device.​ & [R] | ComponentName:Condenser water pipe – Return (CWP-R) | ComponentDescription:Returns the ‘heat-rejected’ water to the refrigeration cycle enabled by a pump.
+[L] | ComponentName:Chilled Water pipe – Supply  (CHWP-S) | ComponentDescription:Transport chilled water to affect exchange of heat between water and air to condition spaces. & [R] | ComponentName:Chilled Water pipe – Return (CHWP-R) | ComponentDescription:Returns heat transferred from building spaces to the refrigeration cycle enabled by a pump.
+[L] | ComponentName:Condenser water pipe – Supply (CWP-S) | ComponentDescription:Transport water carrying the heat-rejected from the refrigeration cycle to the heat-rejection device.​ & [R] | ComponentName:Condenser water pipe – Return (CWP-R) | ComponentDescription:Returns the ‘heat-rejected’ water to the refrigeration cycle enabled by a pump.
 EndPipes
 
 Diagrams

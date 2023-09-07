@@ -34,7 +34,7 @@ public class CameraRotate : MonoBehaviour
             PlayerPrefs.SetFloat("musicValue", 50);
             PlayerPrefs.SetFloat("soundValue", 50);
 
-            PlayerPrefs.SetFloat("rotationSpeed", 60);
+            PlayerPrefs.SetFloat("rotationSpeed", 40);
             PlayerPrefs.SetFloat("zoomSpeed", 75);
             PlayerPrefs.SetFloat("zoomSensitivity", 5);
             PlayerPrefs.SetInt("firstTime", 1);

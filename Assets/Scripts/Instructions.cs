@@ -26,6 +26,8 @@ public class Instructions : MonoBehaviour
     public GameObject InstructionalPopUps;
     public static bool Read;
 
+    public TextMeshProUGUI textToChange;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +51,9 @@ public class Instructions : MonoBehaviour
             InstructionalPopUps.SetActive(false);
         }
 
+        video.Play();
+
+
     }
 
     public void Next()
@@ -56,6 +61,7 @@ public class Instructions : MonoBehaviour
         index++;
         if (index < clips.Count) 
         {
+            textToChange.text = video.clip.name;
             video.Stop();
             video.clip = clips[index];
             video.Play();
@@ -101,7 +107,9 @@ public class Instructions : MonoBehaviour
         if (index != -1)
         {
             previousBtn.SetActive(true);
+            video.Stop();
             video.clip = clips[index];
+            video.Play();
             textArea.text = tutorialText[index];
 
             if ((index == 0 || index == 1) && clips.Count < 4)
