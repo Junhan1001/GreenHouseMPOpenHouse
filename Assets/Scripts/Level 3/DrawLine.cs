@@ -50,7 +50,7 @@ namespace Level3
             lr.material.color = lineColor;
 
             particlesManager = GetComponent<ParticlesManager>();
-
+            
             StartCoroutine(Draw());
         }
 
@@ -71,7 +71,12 @@ namespace Level3
                 // add mesh collider to the line renderer and bake mesh, so that there is a collider for the line to detect by raycast
                 MeshCollider meshCollider = gameObject.AddComponent<MeshCollider>();
                 Mesh mesh = new();
+                // make the mesh to be bake bigger
+                lr.startWidth = 1.2f;
+                lr.endWidth = 1.2f;
                 lr.BakeMesh(mesh);
+                lr.startWidth = lineThickness;
+                lr.endWidth = lineThickness;
                 meshCollider.sharedMesh = mesh;
                 particlesManager.targetPoints = points;
                 //particlesManager.SpawnParticle(points[0]);

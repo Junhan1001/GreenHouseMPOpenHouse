@@ -1369,7 +1369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 774221238}
   m_Layer: 0
-  m_Name: Zero
+  m_Name: CameraRotatePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

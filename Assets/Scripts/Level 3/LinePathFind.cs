@@ -51,7 +51,12 @@ public class LinePathFind : MonoBehaviour
     [SerializeField]
     private GameObject imgError;
 
+    [SerializeField]
+    private GameObject reverseInstruction;
+    private float reverseInstructionActiveTime = 0f;
+
     private float startTime;
+    private bool firstTimeDrawLine = true;
 
     public bool typeOfLineSelected = false;
     public Color colorOfLineSelected;
@@ -101,6 +106,15 @@ public class LinePathFind : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (reverseInstruction.activeSelf)
+        {
+            reverseInstructionActiveTime += Time.deltaTime;
+            if (reverseInstructionActiveTime > 5f)
+            {
+                reverseInstruction.SetActive(false);
+                reverseInstructionActiveTime = 0f;
+            }
+        }
         if (findingPath)
             return;
 #if UNITY_STANDALONE
@@ -118,6 +132,10 @@ public class LinePathFind : MonoBehaviour
 #endif
             if (finishedLevel)
                 return;
+            if (reverseInstruction.activeSelf)
+            {
+                reverseInstruction.SetActive(false);
+            }
 
             // If the player clicks on a line, reverse the line
             if (Physics.Raycast(Camera.main.ScreenPointToRay(touchPosition), out RaycastHit hit3D, lineLayer))
@@ -638,6 +656,12 @@ public class LinePathFind : MonoBehaviour
             line.GetComponent<DrawLine>().lineColor = colorOfLineSelected;
             line.GetComponent<DrawLine>().affectedCellList = new (affectedCellsList);
             line.GetComponent<DrawLine>().finishedAddingPoints = true;
+
+            if (firstTimeDrawLine)
+            {
+                ShowReverseInstruction(newReversePathLocations);
+                firstTimeDrawLine = false;
+            }
         }
         // reset all the used variables
         imgFindingPath.SetActive(false);
@@ -646,6 +670,7 @@ public class LinePathFind : MonoBehaviour
         imgComponentTo.sprite = transparentSprite;
         affectedCellsList.Clear();
         newReversePathLocations.Clear();
+        
     }
 
     public void AddWayPoint(Vector2Int point)
@@ -696,6 +721,39 @@ public class LinePathFind : MonoBehaviour
         {
             return;
         }
+    }
+
+    private void ShowReverseInstruction(List<Vector2> linePoints)
+    {
+        Vector2 centerPoint = Vector2.zero;
+        if (linePoints.Count % 2 == 0)
+        {
+            centerPoint = (linePoints[linePoints.Count / 2] + linePoints[linePoints.Count / 2 - 1]) / 2;
+        }
+        else
+        {
+            centerPoint = linePoints[linePoints.Count / 2];
+        }
+        Vector2 centerPointScreenPoint = Camera.main.WorldToScreenPoint(centerPoint);
+        centerPointScreenPoint.y += 50f;
+        //if (Mathf.Abs(linePoints[0].x - linePoints[^1].x) > Mathf.Abs(linePoints[0].y - linePoints[^1].y))
+        //{
+        //    // horizontal line
+        //    if (centerPoint.y > 0)
+        //        reverseInstruction.transform.position = new Vector2(centerPointScreenPoint.x, centerPointScreenPoint.y + 150);
+        //    else
+        //        reverseInstruction.transform.position = new Vector2(centerPointScreenPoint.x, centerPointScreenPoint.y - 150);
+        //}
+        //else
+        //{
+        //    // vertical line
+        //    if (centerPoint.x < 0)
+        //        reverseInstruction.transform.position = new Vector2(centerPointScreenPoint.x - 150, centerPointScreenPoint.y);
+        //    else
+        //        reverseInstruction.transform.position = new Vector2(centerPointScreenPoint.x + 150, centerPointScreenPoint.y);
+        //}
+        reverseInstruction.transform.position = centerPointScreenPoint;
+        reverseInstruction.SetActive(true);
     }
 
     public bool IsFindingPath()

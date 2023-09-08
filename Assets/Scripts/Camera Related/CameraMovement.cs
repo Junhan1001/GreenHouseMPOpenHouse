@@ -39,9 +39,13 @@ public class CameraMovement : MonoBehaviour
     private float zoomAmount;
     private float deltaDistance;
 
+    [SerializeField]
     private float maxRotationX = 30f;
-    private float minRotationX = 330f;
+    [SerializeField]
+    private float minRotationX = 340f;
+    [SerializeField]
     private float maxRotationY = 150f;
+    [SerializeField]
     private float minRotationY = 30f;
 
     public float cameraDist;
