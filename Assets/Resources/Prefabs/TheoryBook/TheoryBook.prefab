@@ -1652,10 +1652,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theoryBookFormat: {fileID: 4900000, guid: da21c32984bc41f43ae25a8ca09dfcc0, type: 3}
-  TheoryBookTemplate: {fileID: 6305942690520259007}
-  TheoryBookComponent: {fileID: 8672176588455252014}
-  TheoryBookPipes: {fileID: 3517639290872452636}
-  TheoryBookDiagrams: {fileID: 8460871339261983839}
+  theoryBookTemplate: {fileID: 6305942690520259007}
+  theoryBookComponents: {fileID: 8672176588455252014}
+  theoryBookPipes: {fileID: 3517639290872452636}
+  theoryBookDiagrams: {fileID: 8460871339261983839}
   selectedTab: {fileID: 21300000, guid: f02a14b098f45c242a3f2b9b3bfd5674, type: 3}
   unselectedTab: {fileID: 21300000, guid: 0746d2a662955b1409bbe85b39a30e51, type: 3}
   previousBtn: {fileID: 6305942690118015566}

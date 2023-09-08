@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class SlidingChapterAnimation : MonoBehaviour
 {
     public List<Transform> objects;
+    public List<bool> chapterAvailable;
 
     [Header("Adjustable Values")]
     public float leftPosition;
@@ -30,6 +31,26 @@ public class SlidingChapterAnimation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        int index = 0;
+        int availableChapterCount = 0;
+        foreach (bool available in chapterAvailable)
+        {
+            // if the chapter is unavailable, make the unavailable text active
+            if (!available)
+                objects[index].GetChild(objects[index].childCount - 1).gameObject.SetActive(true);
+            index++;
+            if (available)
+            {
+                // if the chapter is available, make the chapter available count increase by 1
+                availableChapterCount++;
+                // for the first available chapter, set the selected object to be the first available chapter
+                if (availableChapterCount == 1)
+                {
+                    selectedObjectIndex = chapterAvailable.IndexOf(available);
+                }
+            }
+        }
+
         centreScale = new Vector3(initialSize, initialSize, initialSize);
         objecthiddenScale = new Vector3(smallerSize, smallerSize, smallerSize);
         MakeSphereLike(objects, selectedObjectIndex, rotateSpeed);

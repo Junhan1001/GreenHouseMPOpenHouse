@@ -39,6 +39,8 @@ public class LevelsObjective : MonoBehaviour
             }
             if (line.StartsWith($"[{chapter}][{level}]"))
             {
+                // chapter length is 2, level length is 1, 4 is the two []
+                // line[(chapter.Length + level.Length + 4)..] means all the chracters starts from index 7
                 objectiveText.text = line[(chapter.Length + level.Length + 4)..];
             }
         });

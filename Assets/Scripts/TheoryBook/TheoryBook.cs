@@ -30,8 +30,8 @@ public class TheoryBook : MonoBehaviour
 
     #region Theory Book Components
     [Header("Theory Book")]
-    public GameObject TheoryBookTemplate;
-    public Image TheoryBookComponent, TheoryBookPipes, TheoryBookDiagrams;
+    public GameObject theoryBookTemplate;
+    public Image theoryBookComponents, theoryBookPipes, theoryBookDiagrams;
     public Sprite selectedTab, unselectedTab;
 
     public GameObject previousBtn, nextBtn;
@@ -80,7 +80,7 @@ public class TheoryBook : MonoBehaviour
             quitBtn.SetActive(false);
         }
 
-        TheoryBookTemplate.SetActive(true);
+        theoryBookTemplate.SetActive(true);
     }
 
     public void CloseTheoryBook()
@@ -94,7 +94,7 @@ public class TheoryBook : MonoBehaviour
 
         //TheoryBookComponent.SetActive(false);
         //TheoryBookPipes.SetActive(false);
-        TheoryBookTemplate.SetActive(false);
+        theoryBookTemplate.SetActive(false);
     }
 
     public void NextPage() 
@@ -114,17 +114,17 @@ public class TheoryBook : MonoBehaviour
         TextAssign(leftArray, leftTitle, leftDescription);
         TextAssign(rightArray, rightTitle, rightDescription);
 
-        if (TheoryBookComponent.GetComponent<Image>().sprite == selectedTab)
+        if (theoryBookComponents.GetComponent<Image>().sprite == selectedTab)
         {
             ImageAssign(leftIamge, componentSprite, currentImage);
             SetRightPageBlank(componentSprite);
         }
-        else if(TheoryBookPipes.GetComponent<Image>().sprite == selectedTab)
+        else if(theoryBookPipes.GetComponent<Image>().sprite == selectedTab)
         {
             ImageAssign(leftIamge, pipeSprite, currentImage);
             SetRightPageBlank(pipeSprite);
         }
-        else if (TheoryBookDiagrams.GetComponent<Image>().sprite == selectedTab)
+        else if (theoryBookDiagrams.GetComponent<Image>().sprite == selectedTab)
         {
             ImageAssign(leftIamge, diagramSprite, currentImage);
             SetRightPageBlank(diagramSprite);
@@ -156,19 +156,19 @@ public class TheoryBook : MonoBehaviour
         TextAssign(leftArray, leftTitle, leftDescription);
         TextAssign(rightArray, rightTitle, rightDescription);
 
-        if (TheoryBookComponent.GetComponent<Image>().sprite == selectedTab)
+        if (theoryBookComponents.GetComponent<Image>().sprite == selectedTab)
         {
             rightHeader.text = "COMPONENTS";
             ImageAssign(leftIamge, componentSprite, currentImage);
             ImageAssign(rightImage, componentSprite, currentImage + 1);
         }
-        else if (TheoryBookPipes.GetComponent<Image>().sprite == selectedTab)
+        else if (theoryBookPipes.GetComponent<Image>().sprite == selectedTab)
         {
             rightHeader.text = "PIPES";
             ImageAssign(leftIamge, pipeSprite, currentImage);
             ImageAssign(rightImage, pipeSprite, currentImage + 1);
         }
-        else if (TheoryBookDiagrams.GetComponent<Image>().sprite == selectedTab) 
+        else if (theoryBookDiagrams.GetComponent<Image>().sprite == selectedTab) 
         {
             rightHeader.text = "DIAGRAMS";
             ImageAssign(leftIamge, diagramSprite, currentImage);
@@ -195,10 +195,10 @@ public class TheoryBook : MonoBehaviour
         }
     }
 
-    private void ImageAssign(Image image, List<Sprite> spriteList, int index) 
+    private void ImageAssign(Image image, List<Sprite> spriteList, int index)
     //assings images based on paramteres
     {
-        image.GetComponent<Image>().sprite = spriteList[index];
+        image.sprite = spriteList[index];
     }
 
     public void Initialize() 
@@ -212,15 +212,15 @@ public class TheoryBook : MonoBehaviour
         leftFrame.SetActive(true);
         rightImage.gameObject.SetActive(true);
 
-        if (TheoryBookComponent.GetComponent<Image>().sprite == selectedTab)
+        if (theoryBookComponents.GetComponent<Image>().sprite == selectedTab)
         {
             ComponentLinesAppend("Components", "EndComponents");
         }
-        else if (TheoryBookPipes.GetComponent<Image>().sprite == selectedTab)
+        else if (theoryBookPipes.GetComponent<Image>().sprite == selectedTab)
         {
             ComponentLinesAppend("Pipes", "EndPipes");
         }
-        else if (TheoryBookDiagrams.GetComponent<Image>().sprite == selectedTab) 
+        else if (theoryBookDiagrams.GetComponent<Image>().sprite == selectedTab) 
         {
             ComponentLinesAppend("Diagrams", "EndDiagrams");
         }
@@ -233,19 +233,19 @@ public class TheoryBook : MonoBehaviour
         TextAssign(leftArray, leftTitle, leftDescription);
         TextAssign(rightArray, rightTitle, rightDescription);
 
-        if (TheoryBookComponent.GetComponent<Image>().sprite == selectedTab)
+        if (theoryBookComponents.GetComponent<Image>().sprite == selectedTab)
         {
             leftHeader.text = rightHeader.text = "COMPONENTS";
             ImageAssign(leftIamge, componentSprite, currentImage);
             SetRightPageBlank(componentSprite);
         }
-        else if(TheoryBookPipes.GetComponent<Image>().sprite == selectedTab)
+        else if(theoryBookPipes.GetComponent<Image>().sprite == selectedTab)
         {
             leftHeader.text = rightHeader.text = "PIPES";
             ImageAssign(leftIamge, pipeSprite, currentImage);
             SetRightPageBlank(pipeSprite);
         }
-        else if (TheoryBookDiagrams.GetComponent<Image>().sprite == selectedTab)
+        else if (theoryBookDiagrams.GetComponent<Image>().sprite == selectedTab)
         {
             leftHeader.text = rightHeader.text = "DIAGRAMS";
             ImageAssign(leftIamge, diagramSprite, currentImage);

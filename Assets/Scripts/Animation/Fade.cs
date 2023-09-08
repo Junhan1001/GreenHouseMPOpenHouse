@@ -109,10 +109,10 @@ public class Fade : MonoBehaviour
                 ShowAllBadges();
             }
 
-            if (!PlayerPrefs.HasKey("fadeSpeed"))
-            {
-                PlayerPrefs.SetFloat("fadeSpeed", 51);
-            }
+            //if (!PlayerPrefs.HasKey("fadeSpeed"))
+            //{
+            //    PlayerPrefs.SetFloat("fadeSpeed", 51);
+            //}
 
             if (PlayerPrefs.HasKey(Strings.Username) && PlayerPrefs.HasKey(Strings.ProfileImage) && profileImage)
             {
@@ -248,7 +248,7 @@ public class Fade : MonoBehaviour
     public void Transition(string scene)
     //takes in a string as the scene destination
     {
-        if (!canFade) return;
+        //if (!canFade) return;
 
         //resets time scale while playing click sound
         //fadeOut = true;

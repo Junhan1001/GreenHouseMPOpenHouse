@@ -49,9 +49,15 @@ public static class Strings
         PlayerPrefs.DeleteKey(ChapterOneProgressions);
         PlayerPrefs.DeleteKey(ChapterTwoProgressions);
         PlayerPrefs.DeleteKey(ChapterThreeProgressions);
+        PlayerPrefs.DeleteKey(ChapterOneLevelOneCompleted);
+        PlayerPrefs.DeleteKey(ChapterOneLevelTwoCompleted);
+        PlayerPrefs.DeleteKey(ChapterOneLevelThreeCompleted);
         PlayerPrefs.DeleteKey(ChapterTwoLevelOneCompleted);
         PlayerPrefs.DeleteKey(ChapterTwoLevelTwoCompleted);
         PlayerPrefs.DeleteKey(ChapterTwoLevelThreeCompleted);
+        PlayerPrefs.DeleteKey(ChapterThreeLevelOneCompleted);
+        PlayerPrefs.DeleteKey(ChapterThreeLevelTwoCompleted);
+        PlayerPrefs.DeleteKey(ChapterThreeLevelThreeCompleted);
         PlayerPrefs.DeleteKey("Reviewed");
         PlayerPrefs.DeleteKey("firstTime");
     }
@@ -63,14 +69,15 @@ public static class Strings
 
     public static bool IsFirstTime()
     {
-        if (!PlayerPrefs.HasKey("firstTime"))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return (!PlayerPrefs.HasKey("firstTime"));
+        //if (!PlayerPrefs.HasKey("firstTime"))
+        //{
+        //    return true;
+        //}
+        //else
+        //{
+        //    return false;
+        //}
     }
 
     public static void ShowBadges(string chapter, string badgePath, Image badge)
