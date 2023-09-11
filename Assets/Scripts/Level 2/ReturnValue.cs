@@ -101,12 +101,12 @@ public class ReturnValue : MonoBehaviour
             if (connection.points.Count == 0)
             {
                 display.FromSelected(gameObject.GetComponent<Image>());
-                display.FromTxt.text = gameObject.name;
+                //display.FromTxt.text = gameObject.name;
             }
             else if (connection.points.Count == 1)
             {
                 display.ToSelected(gameObject.GetComponent<Image>());
-                display.ToTxt.text = gameObject.name;
+               // display.ToTxt.text = gameObject.name;
             }
         }
         else if (EventSystem.current.currentSelectedGameObject.GetComponent<Image>().color != whiter)

@@ -1,0 +1,19 @@
+
+
+<align="center"><size=70><b>Credits</b></size></align>
+
+
+<size=60><u>Clients</u></size>
+Ms. Sowmya
+Mr. Colin
+
+
+<size=60><u>Art / UI Design</u></size>
+Seah Zhi Long
+Ng Jun Han
+
+
+<size=60><u>Programming</u></size>
+Teo Rui Kang
+Kam Zi Le
+Ng Jun Han

@@ -81,7 +81,7 @@ public class Level1Reward : MonoBehaviour
             if (hit.transform.tag.StartsWith("Component") && !LoadedObject) 
             {
                 tagArray = hit.transform.tag.Split("/");
-                Debug.Log("Prefabs/Components/" + tagArray[1] + "_Inspect");
+                //Debug.Log("Prefabs/Components/" + tagArray[1] + "_Inspect");
                 LoadedObject = Resources.Load<GameObject>("Prefabs/Components/" + tagArray[1] + "_Inspect");
             }
             if (LoadedObject && instantiatePoint.transform.childCount < 1)

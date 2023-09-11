@@ -12,7 +12,7 @@ public class IconTab : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (!imageGroup) 
+        if (!imageGroup)
         {
             gameObject.SetActive(false);
             return;
@@ -24,16 +24,11 @@ public class IconTab : MonoBehaviour, IPointerClickHandler
     void Start()
     {
         tabImage = GetComponent<Image>();
+        
         if (imageGroup)
         {
             imageGroup.Subscribe(this);
         }
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
