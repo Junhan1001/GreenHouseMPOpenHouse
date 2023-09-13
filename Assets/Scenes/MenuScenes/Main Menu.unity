@@ -2016,7 +2016,6 @@ GameObject:
   - component: {fileID: 762596719}
   - component: {fileID: 762596718}
   - component: {fileID: 762596720}
-  - component: {fileID: 762596721}
   m_Layer: 5
   m_Name: TheoryBtn
   m_TagString: Untagged
@@ -2208,27 +2207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbd4c4140b0cd3647ae94ef9da23f378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &762596721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 762596714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a539690c20e08b445ac8cb5ff95e6a35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TheoryBookComponent: {fileID: 0}
-  TheoryBookPipes: {fileID: 0}
-  Comppage1: {fileID: 0}
-  Comppage2: {fileID: 0}
-  Comppage3: {fileID: 0}
-  Pipepage1: {fileID: 0}
-  Pipepage2: {fileID: 0}
-  frame: {fileID: 0}
-  quitBtn: {fileID: 370486630}
 --- !u!1 &788068510
 GameObject:
   m_ObjectHideFlags: 0

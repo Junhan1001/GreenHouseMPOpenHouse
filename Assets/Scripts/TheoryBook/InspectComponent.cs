@@ -14,8 +14,7 @@ public class InspectComponent : MonoBehaviour
     private List<string> partsComponentList = new List<string>();
     private List<string> componentToDisplayList = new List<string>();
 
-    int startIndex;
-    int endIndex;
+    int startIndex, endIndex;
 
     private GameObject loadedObject;
     private GameObject componentPrefab;
@@ -51,9 +50,6 @@ public class InspectComponent : MonoBehaviour
                 instantiatePoint.transform.Rotate(Vector3.up, Input.GetTouch(0).deltaPosition.x, Space.World);
             }
         }
-
-
-
     }
 
     public void InspectingComponent(string prefabName) 
@@ -82,8 +78,8 @@ public class InspectComponent : MonoBehaviour
     private void ComponentLinesAppend(string startString, string endString)
     //changes which part of the text file to take based on the text that seperates the segments
     {
-        Debug.Log(startString + "," + endString);
-        Debug.Log(partsComponentList.Count);
+        //Debug.Log(startString + "," + endString);
+        //Debug.Log(partsComponentList.Count);
         for (int i = 0; i < partsComponentList.Count; i++)
         {
             Debug.Log("test");
@@ -97,10 +93,10 @@ public class InspectComponent : MonoBehaviour
             }
         }
 
-        Debug.Log(startIndex + endIndex);
+        //Debug.Log(startIndex + endIndex);
         for (int i = startIndex; i < endIndex; i++)
         {
-            Debug.Log("test");
+            //Debug.Log("test");
             componentToDisplayList.Add(partsComponentList[i]);
         }
 
