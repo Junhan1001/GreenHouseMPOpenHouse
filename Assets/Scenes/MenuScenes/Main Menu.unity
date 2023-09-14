@@ -4843,6 +4843,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8308388785198270883, guid: fbd120a3eca16c045a8f5419788e7d1f, type: 3}
+      propertyPath: m_Name
+      value: TitleandDescriptionPanel
+      objectReference: {fileID: 0}
     - target: {fileID: 8308388785408712277, guid: fbd120a3eca16c045a8f5419788e7d1f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
