@@ -31,7 +31,7 @@ public class ImageGroup : MonoBehaviour
     public void OnTabSelected(IconTab image)
     {
         ResetTabs();
-        if (!theoryBook.theoryBookComponents.GetComponent<Image>().sprite == theoryBook.selectedTab)
+        if (theoryBook.theoryBookComponents.GetComponent<Image>().sprite != theoryBook.selectedTab)
         {
             imageLocation.transform.parent.gameObject.SetActive(true);
             imageLocation.sprite = image.tabImage.sprite;

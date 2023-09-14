@@ -31,6 +31,7 @@ public class TempCheck : MonoBehaviour
         
         //light.transform.localRotation = Quaternion.identity;
         Camera = Camera.main;
+        Camera.fieldOfView = 25;
         Camera.transform.position = new Vector3(-350, -20, 0);
         Camera.transform.rotation = Quaternion.Euler(1,90,0);
         Camera.transform.parent.GetComponent<CameraMovement>().enabled = false;
