@@ -3544,7 +3544,7 @@ MonoBehaviour:
   - {fileID: 3420256080813939743, guid: 304e1455dcae9d24ea49b24b8d5735a3, type: 3}
   - {fileID: 3420256080813939743, guid: 7fa8a3eb0f0772c498a337cf8a609ba7, type: 3}
   - {fileID: 3420256080813939743, guid: 17a6527b39ec37c418b883f7e6cc68bd, type: 3}
-  fade: {fileID: 0}
+  fade: {fileID: 956774535}
 --- !u!114 &252340426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4067,9 +4067,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1382280439}
-  - {fileID: 889132076}
+  - {fileID: 1707035224}
   - {fileID: 740258219}
   - {fileID: 1168374771}
+  - {fileID: 889132076}
   m_Father: {fileID: 754042569}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5340,7 +5341,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: b466cacd3f3afff4699a00cf266930c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &371045000
@@ -11112,7 +11113,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 309297146}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -22223,7 +22224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4072b42226081d4d82a2af667af762f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Answers: {fileID: 369952772}
+  Answers: {fileID: 0}
 --- !u!114 &1916449530
 MonoBehaviour:
   m_ObjectHideFlags: 0
