@@ -28,7 +28,6 @@ public class Placement1 : MonoBehaviour
     public LayerMask layerToIgnore;
     public bool deletingObject;
 
-    public GameObject objectToCheck;
     private bool dontClear;
 
     private Color darkBlue = new Color(0, 0.024f, 1, 1);

@@ -10524,7 +10524,7 @@ MonoBehaviour:
   textArea: {fileID: 71580105}
   textTitleArea: {fileID: 209436819}
   InstructionalPopUps: {fileID: 860568394}
-  textToChange: {fileID: 0}
+  textToChange: {fileID: 238780619}
 --- !u!114 &860568397
 MonoBehaviour:
   m_ObjectHideFlags: 0

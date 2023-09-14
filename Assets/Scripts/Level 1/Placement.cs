@@ -46,7 +46,7 @@ public class Placement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(allowDelete);
+        //Debug.Log(allowDelete);
         ////resets allow delete to true after object has been placed(no finger touching screen)
         //if (!allowDelete && Input.touchCount > 0)
         //{

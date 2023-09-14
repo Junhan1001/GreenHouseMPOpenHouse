@@ -8,6 +8,8 @@ using TMPro;
 
 public class InspectComponent : MonoBehaviour
 {
+    private TheoryBook theoryBook;
+
     public TextAsset partDescriptionTextFile;
     [SerializeField]
     private Camera inspectCamera;
@@ -35,6 +37,7 @@ public class InspectComponent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        theoryBook = FindAnyObjectByType<TheoryBook>();
         string[] lines = partDescriptionTextFile.text.Split('\n');
         partsComponentList = lines.ToList();
     }
@@ -54,6 +57,9 @@ public class InspectComponent : MonoBehaviour
 
     public void InspectingComponent(string prefabName) 
     {
+        if (theoryBook.theoryBookComponents.GetComponent<Image>().sprite != theoryBook.selectedTab)
+            return;
+
         mainCanvas.gameObject.SetActive(false);
         loadedObject = Resources.Load<GameObject>("Prefabs/Components/" + prefabName + "_Inspect");
         componentPrefab = Instantiate(loadedObject, instantiatePoint, false);
@@ -111,7 +117,7 @@ public class InspectComponent : MonoBehaviour
             partName.text = ClickedBtnName;
             for (int i = 0; i < componentToDisplayList.Count; i++)
             {
-                Debug.Log(componentToDisplayList[i].StartsWith("[" + ClickedBtnName + "]"));
+                //Debug.Log(componentToDisplayList[i].StartsWith("[" + ClickedBtnName + "]"));
                 if (componentToDisplayList[i].StartsWith("[" + ClickedBtnName + "]"))
                 {
                     int index = componentToDisplayList[i].IndexOf("]");

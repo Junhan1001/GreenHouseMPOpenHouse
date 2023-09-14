@@ -1899,9 +1899,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c66a4048f58ff24eaebd44c216c9efe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mX: 48
+  mX: 54
   mY: 33
-  startX: 0
+  startX: 6
   startY: 0
   rectGridCellPrefab: {fileID: 3652615425527807359, guid: 522c81b79f1fda94a9b14fbdbb00e5f2, type: 3}
   COLOR_WALKABLE: {r: 0, g: 1, b: 1, a: 0.5}
@@ -7707,7 +7707,7 @@ MonoBehaviour:
   textArea: {fileID: 1929668770}
   textTitleArea: {fileID: 685510037}
   InstructionalPopUps: {fileID: 1100470212}
-  textToChange: {fileID: 0}
+  textToChange: {fileID: 1018904027}
 --- !u!114 &1100470215
 MonoBehaviour:
   m_ObjectHideFlags: 0

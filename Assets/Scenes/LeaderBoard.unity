@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 10233703}
   - component: {fileID: 10233702}
   m_Layer: 5
-  m_Name: Background
+  m_Name: LeaderboardBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1212,7 +1212,7 @@ GameObject:
   - component: {fileID: 1109183819}
   - component: {fileID: 1109183818}
   m_Layer: 5
-  m_Name: ReturnToMenu
+  m_Name: ReturnToMenuBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1666,7 +1666,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1446041554}
   - component: {fileID: 1446041557}
-  - component: {fileID: 1446041556}
   - component: {fileID: 1446041555}
   - component: {fileID: 1446041558}
   m_Layer: 5
@@ -1720,36 +1719,6 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 50}
   m_Constraint: 1
   m_ConstraintCount: 1
---- !u!114 &1446041556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446041553}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1446041557
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1973,7 +1942,7 @@ GameObject:
   - component: {fileID: 1960439952}
   - component: {fileID: 1960439951}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: BtnText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
